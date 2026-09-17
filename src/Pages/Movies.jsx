@@ -1,6 +1,5 @@
 
 import { useEffect, useState } from "react";
-
 import MovieCard from "../Components/MovieCard";
 import MovieModal from "../Components/MovieModal";
 import Loading from "../Components/Loading";
@@ -9,8 +8,6 @@ const Movies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
-
-  
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
@@ -20,7 +17,6 @@ const Movies = () => {
       try {
         let url = "https://api.tvmaze.com/shows";
 
-        I
         if (search.trim()) {
           url = `https://api.tvmaze.com/search/shows?q=${search}`;
         }
@@ -28,7 +24,6 @@ const Movies = () => {
         const res = await fetch(url);
         const data = await res.json();
 
-       
         if (search.trim()) {
           setMovies(data.map((item) => item.show));
         } else {
@@ -49,11 +44,12 @@ const Movies = () => {
     <section className="min-h-screen bg-gray-950 px-6 py-12">
       <div className="mx-auto max-w-7xl">
 
-        {/* Page Title */}
+      
         <h1 className="mb-8 text-center text-4xl font-bold text-white">
           Explore Movies
         </h1>
 
+      
         <div className="mb-10">
           <input
             type="text"
