@@ -5,7 +5,7 @@ const Footer = () => {
         
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           
-          {/* Brand */}
+      
           <div>
             <h2 className="text-2xl font-bold">
               🎬 MovieExplorer
@@ -17,7 +17,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">
               Quick Links
@@ -38,7 +37,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Social */}
           <div>
             <h3 className="mb-4 text-lg font-semibold">
               Follow Us
@@ -61,7 +59,7 @@ const Footer = () => {
 
         </div>
 
-        {/* Copyright */}
+
         <div className="mt-10 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
           <p>
             © 2026 MovieExplorer. All rights reserved.

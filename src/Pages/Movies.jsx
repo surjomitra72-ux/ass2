@@ -10,7 +10,7 @@ const Movies = () => {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
 
-  // Selected movie for modal
+  
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const Movies = () => {
       try {
         let url = "https://api.tvmaze.com/shows";
 
-        // Search API
+        I
         if (search.trim()) {
           url = `https://api.tvmaze.com/search/shows?q=${search}`;
         }
@@ -28,7 +28,7 @@ const Movies = () => {
         const res = await fetch(url);
         const data = await res.json();
 
-        // Search API returns objects inside "show"
+       
         if (search.trim()) {
           setMovies(data.map((item) => item.show));
         } else {
@@ -54,7 +54,6 @@ const Movies = () => {
           Explore Movies
         </h1>
 
-        {/* Search Bar */}
         <div className="mb-10">
           <input
             type="text"
@@ -65,7 +64,7 @@ const Movies = () => {
           />
         </div>
 
-        {/* Loading / No Result / Movies */}
+       
         {loading ? (
           <Loading />
         ) : movies.length === 0 ? (
@@ -84,7 +83,7 @@ const Movies = () => {
           </div>
         )}
 
-        {/* Movie Modal */}
+    
         <MovieModal
           movie={selectedMovie}
           onClose={() => setSelectedMovie(null)}
